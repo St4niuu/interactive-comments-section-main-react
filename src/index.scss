@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+// variables
+
+$moderate-blue: hsl(238, 40%, 52%);
+$soft-red: hsl(358, 79%, 66%);
+$light-grayish-blue: hsl(239, 57%, 85%);
+$pale-red: hsl(357, 100%, 86%);
+$dark-blue: hsl(212, 24%, 26%);
+$grayish-blue: hsl(211, 10%, 45%);
+$light-gray: hsl(223, 19%, 93%);
+$very-light-gray: hsl(228, 33%, 97%);
+$font-size: 16px;
+
+// main
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: $very-light-gray;
+    font-size: $font-size;
+    #root{
+        padding: 1.5rem;
+        width: inherit;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        .container
+        {
+            background-color: inherit;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            .comment, > .reply{
+                .header{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1rem;
+                    img
+                    {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                    .logged
+                    {
+                        background-color: $moderate-blue;
+                        padding: 0.3rem;
+                        color: white;
+                        font-weight: 500;
+                        border-radius: 5px;
+                    }
+                    span:nth-of-type(2)
+                    {
+                        color: $grayish-blue;
+                    }
+                }
+                .content
+                {
+                    color: $grayish-blue;
+                    span
+                    {
+                        color: $moderate-blue;
+                        font-weight: 700;
+                    }
+                }
+                .footer
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    .input
+                    {
+                        width: 6rem;
+                        height: 2rem;
+                        background-color: $light-gray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $moderate-blue;
+                        border-radius: 10px;
+                        position: relative;
+                        img
+                        {
+                            cursor: pointer;
+                        }
+                        img:nth-of-type(1)
+                        {
+                            position: absolute;
+                            top: 50%;
+                            left: 10%;
+                            transform: translateY(-50%);
+                        }
+                        img:nth-of-type(2)
+                        {
+                            position: absolute;
+                            top: 50%;
+                            right: 10%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .options
+                    {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        color: $moderate-blue;
+                        .reply, .edit
+                        {
+                            color: $moderate-blue;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                        }
+                        .delete
+                        {
+                            color: $soft-red;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .comment{
+                height: fit-content;
+                width: 20rem;
+                background-color: white;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                border-radius: 10px;
+                textarea
+                {
+                    padding: 0.5rem;
+                    color: black;
+                    outline: none;
+                    border: none;
+                    border: solid 1px $light-gray;
+                    border-radius: 10px;
+                    width: 100%;
+                }
+                button
+                {
+                    background-color: $moderate-blue;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+            > .addReplyToComment
+            {
+                height: fit-content;
+                width: 20rem;
+                background-color: white;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 0.5rem;
+                img
+                {
+                    width: 2rem;
+                    height: 2rem;
+                }
+                textarea
+                {
+                    padding: 0.5rem;
+                    color: black;
+                    outline: none;
+                    border: none;
+                    border: solid 1px $light-gray;
+                    border-radius: 10px;
+                    flex-grow: 1;
+                }
+                button
+                {
+                    background-color: $moderate-blue;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+            > .addReplyToReply
+            {
+                height: fit-content;
+                width: calc(20rem - 1rem);
+                background-color: white;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 0.5rem;
+                border-radius: 10px;
+                margin-left: 1rem;
+                border-left: orange 2px solid;
+                img
+                {
+                    width: 2rem;
+                    height: 2rem;
+                }
+                textarea
+                {
+                    padding: 0.5rem;
+                    color: black;
+                    outline: none;
+                    border: none;
+                    border: solid 1px $light-gray;
+                    border-radius: 10px;
+                    flex-grow: 1;
+                }
+                button
+                {
+                    background-color: $moderate-blue;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+            > .reply
+            {
+                height: fit-content;
+                width: calc(20rem - 1rem);
+                background-color: white;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                border-radius: 10px;
+                margin-left: 1rem;
+                border-left: orange 2px solid;
+                textarea
+                {
+                    padding: 0.5rem;
+                    color: black;
+                    outline: none;
+                    border: none;
+                    border: solid 1px $light-gray;
+                    border-radius: 10px;
+                    width: 100%;
+                }
+                button
+                {
+                    background-color: $moderate-blue;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+                .content
+                {
+                    span
+                    {
+                        color: $moderate-blue;
+                        font-weight: 700;
+                    }
+                }   
+            } 
+        }
+        > .input
+        {
+            height: fit-content;
+            width: 20rem;
+            background-color: white;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-radius: 10px;
+            textarea
+            {
+                padding: 0.5rem;
+                color: black;
+                outline: none;
+                border: none;
+                border: solid 1px $light-gray;
+                border-radius: 10px;
+            }
+            > .footer
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                img
+                {
+                    width: 2rem;
+                    height: 2rem;
+                }
+                button
+                {
+                    background-color: $moderate-blue;
+                    padding: 0.5rem 2rem;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+        }
+        > .delete
+        {
+            background-color: rgba(217, 217, 217, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            .deleteContainer
+            {
+                width: 20rem;
+                height: fit-content;
+                padding: 1.5rem;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                border-radius: 15px;
+                font-weight: light;
+                p
+                {
+                    color: $grayish-blue;
+                }
+                > .footer
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    button
+                    {
+                        padding: 1rem 2rem;
+                        color: white;
+                        border-radius: 10px;
+                        border: none;
+                        outline: none;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        font-size: 70%;
+                        cursor: pointer;
+                    }
+                    button:nth-of-type(1)
+                    {
+                        background-color: $grayish-blue;
+                    }
+                    button:nth-of-type(2)
+                    {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 500px)
+{
+    body
+    {
+        #root
+        {
+            .container
+            {
+                width: 50rem;
+                .comment
+                {
+                    width: 100%;
+                }
+                > .reply
+                {
+                    width: calc(100% - 4rem);
+                    margin-left: 4rem;
+                }
+                > .addReplyToComment
+                {
+                    width: 100%;
+                }
+                > .addReplyToReply
+                {
+                    margin-left: 4rem;
+                    width: calc(100% - 4rem);
+                }
+            }
+            > .input
+            {
+                width: 50rem;
+            }
+        }
+        
+    }
+    
+}

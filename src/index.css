@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6fa;
+  font-size: 16px;
+}
+
+body #root {
+  padding: 1.5rem;
+  width: inherit;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+body #root .container {
+  background-color: inherit;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #root .container .comment .header, body #root .container > .reply .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+body #root .container .comment .header img, body #root .container > .reply .header img {
+  width: 2rem;
+  height: 2rem;
+}
+
+body #root .container .comment .header .logged, body #root .container > .reply .header .logged {
+  background-color: #5457b6;
+  padding: 0.3rem;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+body #root .container .comment .header span:nth-of-type(2), body #root .container > .reply .header span:nth-of-type(2) {
+  color: #67727e;
+}
+
+body #root .container .comment .content, body #root .container > .reply .content {
+  color: #67727e;
+}
+
+body #root .container .comment .content span, body #root .container > .reply .content span {
+  color: #5457b6;
+  font-weight: 700;
+}
+
+body #root .container .comment .footer, body #root .container > .reply .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #root .container .comment .footer .input, body #root .container > .reply .footer .input {
+  width: 6rem;
+  height: 2rem;
+  background-color: #eaecf1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #5457b6;
+  border-radius: 10px;
+  position: relative;
+}
+
+body #root .container .comment .footer .input img, body #root .container > .reply .footer .input img {
+  cursor: pointer;
+}
+
+body #root .container .comment .footer .input img:nth-of-type(1), body #root .container > .reply .footer .input img:nth-of-type(1) {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body #root .container .comment .footer .input img:nth-of-type(2), body #root .container > .reply .footer .input img:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body #root .container .comment .footer .options, body #root .container > .reply .footer .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  color: #5457b6;
+}
+
+body #root .container .comment .footer .options .reply, body #root .container .comment .footer .options .edit, body #root .container > .reply .footer .options .reply, body #root .container > .reply .footer .options .edit {
+  color: #5457b6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+body #root .container .comment .footer .options .delete, body #root .container > .reply .footer .options .delete {
+  color: #ed6468;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+body #root .container .comment {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20rem;
+  background-color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+body #root .container .comment textarea {
+  padding: 0.5rem;
+  color: black;
+  outline: none;
+  border: none;
+  border: solid 1px #eaecf1;
+  border-radius: 10px;
+  width: 100%;
+}
+
+body #root .container .comment button {
+  background-color: #5457b6;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body #root .container > .addReplyToComment {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20rem;
+  background-color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.5rem;
+}
+
+body #root .container > .addReplyToComment img {
+  width: 2rem;
+  height: 2rem;
+}
+
+body #root .container > .addReplyToComment textarea {
+  padding: 0.5rem;
+  color: black;
+  outline: none;
+  border: none;
+  border: solid 1px #eaecf1;
+  border-radius: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body #root .container > .addReplyToComment button {
+  background-color: #5457b6;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body #root .container > .addReplyToReply {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(20rem - 1rem);
+  background-color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  border-left: orange 2px solid;
+}
+
+body #root .container > .addReplyToReply img {
+  width: 2rem;
+  height: 2rem;
+}
+
+body #root .container > .addReplyToReply textarea {
+  padding: 0.5rem;
+  color: black;
+  outline: none;
+  border: none;
+  border: solid 1px #eaecf1;
+  border-radius: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body #root .container > .addReplyToReply button {
+  background-color: #5457b6;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body #root .container > .reply {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(20rem - 1rem);
+  background-color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  border-left: orange 2px solid;
+}
+
+body #root .container > .reply textarea {
+  padding: 0.5rem;
+  color: black;
+  outline: none;
+  border: none;
+  border: solid 1px #eaecf1;
+  border-radius: 10px;
+  width: 100%;
+}
+
+body #root .container > .reply button {
+  background-color: #5457b6;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body #root .container > .reply .content span {
+  color: #5457b6;
+  font-weight: 700;
+}
+
+body #root > .input {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20rem;
+  background-color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+body #root > .input textarea {
+  padding: 0.5rem;
+  color: black;
+  outline: none;
+  border: none;
+  border: solid 1px #eaecf1;
+  border-radius: 10px;
+}
+
+body #root > .input > .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #root > .input > .footer img {
+  width: 2rem;
+  height: 2rem;
+}
+
+body #root > .input > .footer button {
+  background-color: #5457b6;
+  padding: 0.5rem 2rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body #root > .delete {
+  background-color: rgba(217, 217, 217, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body #root > .delete .deleteContainer {
+  width: 20rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 15px;
+  font-weight: light;
+}
+
+body #root > .delete .deleteContainer p {
+  color: #67727e;
+}
+
+body #root > .delete .deleteContainer > .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #root > .delete .deleteContainer > .footer button {
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 70%;
+  cursor: pointer;
+}
+
+body #root > .delete .deleteContainer > .footer button:nth-of-type(1) {
+  background-color: #67727e;
+}
+
+body #root > .delete .deleteContainer > .footer button:nth-of-type(2) {
+  background-color: red;
+}
+
+@media screen and (min-width: 500px) {
+  body #root .container {
+    width: 50rem;
+  }
+  body #root .container .comment {
+    width: 100%;
+  }
+  body #root .container > .reply {
+    width: calc(100% - 4rem);
+    margin-left: 4rem;
+  }
+  body #root .container > .addReplyToComment {
+    width: 100%;
+  }
+  body #root .container > .addReplyToReply {
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
+  }
+  body #root > .input {
+    width: 50rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
